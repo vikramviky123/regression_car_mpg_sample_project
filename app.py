@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import pandas as pd
 import numpy as np
 import pickle
+from train import preProcess
 
 app = Flask(__name__)
 
@@ -54,6 +55,7 @@ def predict():
         loaded_model = pickle.load(pickle_file)
 
     try:
+
         # Retrieve the input data from the form
         cyl = float(request.form.get('cyl'))
         disp = float(request.form.get('disp'))
@@ -80,12 +82,39 @@ def predict():
 
         # Create a DataFrame from the dictionary
         df = pd.DataFrame(data)
+        print(df)
+
+        df_transformed = df.copy()
+
+        # Load the saved list of models using pickle
+        pickle_file_path = "models/preprocessing_transformers.pkl"
+        with open(pickle_file_path, 'rb') as pickle_file:
+            preprocess_pickle = pickle.load(pickle_file)
+
+        process = 'label_encoders'
+        print(process)
+        for col in preprocess_pickle[process].keys():
+            if df_transformed[col].dtype == 'object':
+                df_transformed[col] = preprocess_pickle[process][col].transform(
+                    df_transformed[col])
+
+        process = 'imputer'
+        print(process)
+        df_transformed = pd.DataFrame(preprocess_pickle[process].transform(
+            df_transformed), columns=df_transformed.columns)
+
+        process = 'scaler'
+        print(process)
+        df_transformed = pd.DataFrame(preprocess_pickle[process].transform(
+            df_transformed), columns=df_transformed.columns)
+
+        print(df_transformed)
 
         preds_final = np.zeros(1)
         for model in loaded_model:
-            preds_final += model.predict(df) / N_SPLITS
+            preds_final += model.predict(df_transformed) / N_SPLITS
 
-        preds_final = np.round(preds_final, 2)
+        preds_final = np.round(preds_final, 4)
 
         return render_template('predict.html', preds_final=preds_final)
 
