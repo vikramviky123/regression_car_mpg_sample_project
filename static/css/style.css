@@ -1,0 +1,390 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* CSS Variables */
+:root {
+    --navbar-height: 100px;
+}
+
+/* Headings */
+h1,
+h2 {
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+}
+
+h1 span,
+h2 span {
+    background-color: rgb(238, 204, 175);
+    border-radius: 10px;
+    line-height: 30px;
+}
+
+
+
+/* Paragraphs */
+p {
+    padding: 5px;
+    margin: 8px;
+    font-size: 1.5rem;
+    background-color: beige;
+    border-radius: 10px;
+    line-height: 30px;
+    letter-spacing: 1px;
+}
+
+/* Navigation Bar */
+#navbar {
+    display: flex;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    padding: 20px 0 20px 30px;
+}
+
+/* Navigation Bar List */
+#navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#navbar::before {
+    content: "";
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+#navbar ul li {
+    list-style: none;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px #FF0000;
+    padding: 10px;
+}
+
+#navbar ul li a {
+    color: white;
+    display: block;
+    padding: 3px 50px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover {
+    color: black;
+    background-color: lightgoldenrodyellow;
+    transform: scale(1.1);
+}
+
+/* Intro Section */
+#Intro {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    justify-content: left;
+    align-items: left;
+}
+
+#Intro::before {
+    content: "";
+    background: url(/static/img/background_img.jpg) no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 70%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+#Intro ul {
+    margin: 20px;
+    padding-left: 40px;
+    font-size: 1.4rem;
+}
+
+/* Data List */
+.data-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.data-list li {
+    margin: 10px 0;
+}
+
+.data-list li strong {
+    display: inline-block;
+    width: 100px;
+    /* Adjust the width as needed to align the labels */
+}
+
+/* Data Summary */
+#data-summary,
+#changes-moving-forward {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin: 20px 0;
+}
+
+.h-secondary {
+    color: #333;
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.summary-divider {
+    border: 1px solid #ccc;
+    margin: 15px 0;
+}
+
+.summary-subheader {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.highlight-yellow {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+#data-summary ul {
+    padding-left: 50px;
+}
+
+#changes-moving-forward ul {
+    padding-left: 50px;
+}
+
+/* EDA -------------------------------------------------------- */
+
+#hist {
+    margin: 3px 6px;
+    border-color: #8a050505;
+    padding-top: 20px;
+    padding-left: 50px;
+}
+
+#hist img {
+    height: 50%;
+    width: 50%;
+    margin: 3px 15px;
+    transition: all 1s ease-in-out;
+
+}
+
+#hist img:hover {
+    transform: scale(1.1);
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #260303;
+    min-width: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /* Add this line to set the font size */
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    border-color: black;
+}
+
+/* Show the dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Position the dropdown below the navigation item */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* univariate analysis */
+#summary {
+    padding: 20px;
+}
+
+#summary h2 {
+    font-size: 1.8rem;
+}
+
+.summary-section {
+    margin-top: 20px;
+}
+
+.summary-section h3 {
+    font-size: 1.5rem;
+}
+
+.summary-section ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.summary-section li {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+/* Bivariate analysis */
+
+.summary-section ul {
+    padding-left: 80px;
+}
+
+.summary-section h3 {
+    padding-left: 40px;
+}
+
+/* Model Analysis */
+/* Model section styles */
+#model {
+    padding: 20px;
+}
+
+#model h1 {
+    font-size: 2rem;
+}
+
+#model .content {
+    margin-top: 20px;
+}
+
+#model h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#model ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+#model li {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+/* Results table styles */
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.results-table th,
+.results-table td {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: center;
+}
+
+.results-table th {
+    background-color: #eee;
+}
+
+.results-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.results-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.results-table tr:hover {
+    background-color: #ccc;
+}
+
+#model ul {
+    padding-left: 40px;
+}
+
+/* Predict ------   */
+/* CSS for styling the form */
+.form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin: 10px 0;
+}
+
+.form label {
+    display: block;
+    font-weight: bold;
+}
+
+.form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.form input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* CSS for styling the result and error messages */
+.result {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.error {
+    margin-top: 10px;
+    color: red;
+}
+
+.result span {
+
+    font-size: 40px;
+    color: brown;
+
+}

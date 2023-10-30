@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+   <!-- This is Welcome section ---------------------------------->
+   <div id="model">
+    <h1>Model Analysis</h1>
+
+    <div class="content">
+        <h2>1. Preprocessing</h2>
+        <p>In the preprocessing phase, the data is transformed to prepare it for model training. Numeric variables are imputed with the mean, while categorical variables are imputed with the mode using SimpleImputer. The data is then scaled using StandardScaler. A pipeline is used to streamline both processes simultaneously.</p>
+    </div>
+
+    <div class="content">
+        <h2>2. Ensemble of 6 Models for Training</h2>
+        <p>Training involves the use of six different models for regression:</p>
+        <ul>
+            <li>Linear Regression</li>
+            <li>Decision Tree Regression</li>
+            <li>Random Forest Regression</li>
+            <li>Historical Gradient Boosting Machine Regression</li>
+            <li>XGBoost Regression</li>
+            <li>LightGBM Regression</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h2>3. Model Training</h2>
+        <p>Model training is performed using k-fold cross-validation with six splits. The average of predicted values is computed to evaluate the model's performance.</p>
+    </div>
+
+    <div class="content">
+        <h2>4. Metrics Chosen</h2>
+        <p>The following metrics are chosen to assess model performance:</p>
+        <ul>
+            <li>R-squared (R2)</li>
+            <li>Mean Absolute Error (MAE)</li>
+            <li>Root Mean Squared Error (RMSE)</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h2>5. Results</h2>
+        <table class="results-table">
+            <tr>
+                <th>Model</th>
+                <th>Validation</th>
+                <th>Test</th>
+            </tr>
+            <tr>
+                <td>linear_reg</td>
+                <td>0.8186, 2.5429, 3.2933</td>
+                <td>0.8648, 2.1420, 2.6957</td>
+            </tr>
+            <tr>
+                <td>dt_reg</td>
+                <td>0.7581, 2.6261, 3.7622</td>
+                <td>0.8870, 1.6850, 2.4652</td>
+            </tr>
+            <tr>
+                <td>rf_reg</td>
+                <td>0.8550, 2.0416, 2.9255</td>
+                <td>0.9200, 1.5767, 2.0736</td>
+            </tr>
+            <tr>
+                <td>histgbm_reg</td>
+                <td>0.8549, 2.0856, 2.9448</td>
+                <td>0.9192, 1.5858, 2.0843</td>
+            </tr>
+            <tr>
+                <td>xgb_reg</td>
+                <td>0.8367, 2.2163, 3.1184</td>
+                <td>0.9026, 1.7085, 2.2881</td>
+            </tr>
+            <tr>
+                <td>lgb_reg</td>
+                <td>0.8556, 2.0940, 2.9393</td>
+                <td>0.9165, 1.6102, 2.1193</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>For Metric  r2-square Best Model : lgb_reg   |  Best Score : 0.8556</h2><br>    
+
+    <h2> For Metric        mae Best Model : rf_reg   |  Best Score : 2.0416</h2><br>
+
+    <h2> For Metric       rmse Best Model : rf_reg   |  Best Score : 2.9255</h2><br>
+    <h2> <span class="highlight-yellow">Going Forward with Random Forest Regressor</span></h2>
+
+</div>
+
+
+{% endblock %}

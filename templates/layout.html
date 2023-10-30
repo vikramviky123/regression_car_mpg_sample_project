@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPG</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+        <!-- This is Navigation Bar ---------------------------------->
+        <!-- This is Navigation Bar ---------------------------------->
+    <!-- This is Navigation Bar ---------------------------------->
+    <nav id="navbar">
+        <ul>
+            <li class="item"><a href="/">Intro</a></li>
+            <li class="item"><a href="/data">Data</a></li>
+            <li class="item dropdown">
+                <a class="dropbtn">EDA</a>
+                <div class="dropdown-content">
+                    <a href="/eda/univariate">Univariate Analysis</a>
+                    <a href="/eda/bivariate">Bivariate Analysis</a>
+                    <a href="/eda/multivariate">Multivariate Analysis</a>
+                </div>
+            </li>
+
+            <li class="item dropdown">
+                <a class="dropbtn">Model</a>
+                <div class="dropdown-content">
+                    <a href="/model/modelanalysis">Model Analysis</a>
+                    <a href="/model/modelplots">Model Evaluation</a>                   
+                </div>
+            </li>
+           
+            <li class="item"><a href="/predict">Prediction</a></li>
+        </ul>
+    </nav>
+
+
+    {% block body%}
+
+    {% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <!-- This is Welcome section ---------------------------------->
+    <h1>Bnivariate Analysis</h1>
+    <div id="hist">
+        <img src="{{ url_for('static', filename='plots/bi_plots/car_type.jpg') }}" alt="MyOnlineMeal.com">
+    </div>
+  
+    <div id="hist">
+        <img src="{{ url_for('static', filename='plots/bi_plots/cyl.jpg') }}" alt="MyOnlineMeal.com">
+    </div>
+    <div id="hist">
+        <img src="{{ url_for('static', filename='plots/bi_plots/origin.jpg') }}" alt="MyOnlineMeal.com">
+    </div>
+    <div id="hist">
+        <img src="{{ url_for('static', filename='plots/bi_plots/yr_vs_mpg.jpg') }}" alt="MyOnlineMeal.com">
+    </div>
+    <br>
+    <h2>Pair Plot</h2>
+    <div id="hist">
+        <img src="{{ url_for('static', filename='plots/bi_plots/pairplot.jpg') }}" alt="MyOnlineMeal.com">
+    </div>
+    <br>
+    <h2>Correlation Plot</h2>
+    <div id="hist">
+        <img src="{{ url_for('static', filename='plots/bi_plots/Correlation Plot_spearman.jpg') }}" alt="MyOnlineMeal.com">
+    </div>
+  
+    <div id="summary">
+        <h2>Summary of Bivariate Analysis</h2>
+    
+        <div class="summary-section">
+            <h3>Engine Cylinders</h3>
+            <ul>
+                <li>Engine Cylinders with 4 nos having the highest average miles per gallon.</li>
+            </ul>
+        </div>
+    
+        <div class="summary-section">
+            <h3>Origin and Car Type</h3>
+            <ul>
+                <li>Origin 1 and car type 1 have the most impact on the data.</li>
+            </ul>
+        </div>
+    
+        <div class="summary-section">
+            <h3>Correlation</h3>
+            <ul>
+                <li><strong>Strong correlation</strong> between independent variables.</li>
+                <li>Strong <strong>nonlinear</strong> relationship with the target variable <strong>mpg</strong>.</li>
+            </ul>
+        </div>
+    </div>
+    
+
+{% endblock %}

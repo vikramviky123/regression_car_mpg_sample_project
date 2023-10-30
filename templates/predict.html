@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+   <!-- This is Welcome section ---------------------------------->
+   <h1>Enter Car Details</h1>
+
+   <form action="/predict" method="post" class="form">
+    <!-- Other form elements... -->
+    <div class="form-group">
+        <label for="cyl">Number of engine cylinders in the engine:</label>
+        <select id="cyl" name="cyl">
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6" selected>6</option> <!-- Preload with value 6 -->
+            <option value="8">8</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="disp">Engine Displacement (cc):</label>
+        <input type="text" id="disp" name="disp" value="307.0"> <!-- Preload with value 307.0 -->
+    </div>
+
+    <div class="form-group">
+        <label for="hp">Horse Power:</label>
+        <input type="text" id="hp" name="hp" value="130.0"> <!-- Preload with value 130.0 -->
+    </div>
+
+    <div class="form-group">
+        <label for="wt">Weight (kgs):</label>
+        <input type="text" id="wt" name="wt" value="3504.0"> <!-- Preload with value 3504.0 -->
+    </div>
+
+    <div class="form-group">
+        <label for="acc">Acceleration (m/s²):</label>
+        <input type="text" id="acc" name="acc" value="12.0"> <!-- Preload with value 12.0 -->
+    </div>
+
+    <div class="form-group">
+        <label for="yr">Year (YYYY):</label>
+        <input type="text" id="yr" name="yr" value="70.0"> <!-- Preload with value 70.0 -->
+    </div>
+
+    <div class="form-group">
+        <label for="origin">Origin:</label>
+        <select id="origin" name="origin">
+            <option value="1" selected>1</option> <!-- Preload with value 1 -->
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="car_type">Car Type:</label>
+        <select id="car_type" name="car_type">
+            <option value="0" selected>0</option> <!-- Preload with value 0 -->
+            <option value="1">1</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="car_name">Car Name:</label>
+        <input type="text" id="car_name" name="car_name" value="49.0"> <!-- Preload with value 49.0 -->
+    </div>
+
+    <input type="submit" value="Predict MPG">
+</form>
+
+
+   <div class="result">
+    The Predicted value of Miles Per Gallon for above Data is : <span>{{preds_final}}</span>
+    MPG</div>
+
+   <div class="error">
+    Error Message: {{error_message}}
+   </div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <!-- This is Welcome section ---------------------------------->
+    <h1>Multivariate Analysis</h1>
+    <div id="hist">
+        <img src="{{ url_for('static', filename='plots/multi_plots/cyl_vs_mpg.jpg') }}" alt="MyOnlineMeal.com">
+    </div>
+
+    <div id="summary">
+        <h2>Summary of Multivariate Analysis</h2>
+    
+        <div class="summary-section">
+            <h3>Impact of Combinations</h3>
+            <ul>
+                <li>Combination of cartype 1, origin 1,2,3, and cylinder 4 has the most significant impact when compared.</li>
+                <li>Combination of origin 1,2,3, and cylinder 3,5 has the least impact when compared.</li>
+                <li>Combination of origin 2,3, and cylinder 3,5,6,8 has the least impact when compared.</li>
+            </ul>
+        </div>
+    </div>
+    
+
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<section id="data-summary">
+    <h1 class="h-secondary">Data Summary</h1>
+    <p><strong>Total number of Rows:</strong> 398</p>
+    <p><strong>Total number of Columns:</strong> 10</p>
+    <hr class="summary-divider">
+    <p class="summary-subheader">Checking for Null values</p>
+    <p><strong>Total number of Null values present in all Columns:</strong> <span class="highlight-yellow">0</span></p>
+    <hr class="summary-divider">
+    <p class="summary-subheader">Checking for Duplicate values</p>
+    <p><strong>Total number of duplicates present in all Columns:</strong> <span class="highlight-yellow">0</span></p>
+</section>
+
+<section id="data-summary">
+    <h2 class="h-secondary">Summary of Data</h2>
+    <ul>
+        <li>The dataset has 9 independent variables and 1 dependent variable.</li>
+        <li><strong>Null</strong> values have <strong>NOT</strong> been found.</li>
+        <li><strong>Duplicate</strong> values have <strong>NOT</strong> been found.</li>
+    </ul>
+    <hr class="summary-divider">
+    <p><strong>The dataset</strong> contains three distinct data types:</p>
+    <ul>
+        <li>float</li>
+        <li>int</li>
+        <li>object</li>
+    </ul>
+    <p><strong>hp</strong> column, which is found to be numerical, has a datatype of <strong>object</strong>.</p>
+    <p><strong>?</strong> was detected in the <strong>hp</strong> column.</p>
+</section>
+
+<section id="changes-moving-forward">
+    <h2 class="h-secondary" >Changes Moving Forward</h2>
+    <ul>
+        <li>Replacing <strong>?</strong> with <strong>np.NaN</strong></li>
+        <li>Converting <strong>hp</strong> to <strong>float64</strong></li>
+        <li>Imputing <strong>np.NaN</strong> with the mean value</li>
+    </ul>
+</section>
+
+{% endblock %}

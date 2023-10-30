@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+   <!-- This is Welcome section ---------------------------------->
+<div id = "uni">
+    <div>
+        <h1>Univariate Analysis</h1>
+        <div id="hist">
+            <img src="{{ url_for('static', filename='plots/dist_plots/mpg.jpg') }}" alt="MyOnlineMeal.com">
+        </div>
+        <div id="hist">
+            <img src="{{ url_for('static', filename='plots/dist_plots/acc.jpg') }}" alt="MyOnlineMeal.com">
+        </div>
+        <div id="hist">
+            <img src="{{ url_for('static', filename='plots/dist_plots/disp.jpg') }}" alt="MyOnlineMeal.com">
+        </div>
+        <div id="hist">
+            <img src="{{ url_for('static', filename='plots/dist_plots/hp_mod.jpg') }}" alt="MyOnlineMeal.com">
+        </div>
+        <div id="hist">
+            <img src="{{ url_for('static', filename='plots/dist_plots/wt.jpg') }}" alt="MyOnlineMeal.com">
+        </div>
+    </div>
+
+   <!-- Summary Section -->
+   <div id="summary">
+       <h2>Summary of Univariate Analysis</h2>
+
+       <div class="summary-section">
+           <h3>Descriptive</h3>
+           <ul>
+               <li>The data has nominal, ordinal, and continuous data.</li>
+               <li>mpg of all cars in the range of min value = 9 and max value = 46.6</li>
+               <li>engine cylinders of all cars in the range of min value = 3 and max value = 8</li>
+               <li>year made of all cars in the range of min value = 70 and max value = 82</li>
+               <li>Weight of cars in the range of min value = 1.6T and max value = 5.2T</li>
+           </ul>
+       </div>
+
+       <div class="summary-section">
+           <h3>Univariate</h3>
+           <ul>
+               <li>All distributions are not Normal</li>
+               <li>Outliers were present</li>
+           </ul>
+       </div>
+   </div>
+</div>
+
+{% endblock %}

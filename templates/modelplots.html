@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+   <!-- This is Welcome section ---------------------------------->
+   <div id="model">
+    <h1>Model Plots</h1>
+
+    
+    <div class="content">
+        <h2>1. Model Evaluation</h2>
+        <p>Model evaluation includes various plots for each model's performance.</p>
+        <div id="hist">
+            <img src="{{ url_for('static', filename='model_plots/Model_Evaluation_VALIDATION_r2-square.jpg') }}" alt="MyOnlineMeal.com">
+        </div>
+        <div id="hist">
+            <img src="{{ url_for('static', filename='model_plots/Model_Evaluation_VALIDATION_mae.jpg') }}" alt="MyOnlineMeal.com">
+        </div>
+        <div id="hist">
+            <img src="{{ url_for('static', filename='model_plots/Model_Evaluation_VALIDATION_rmse.jpg') }}" alt="MyOnlineMeal.com">
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>2. Post Processing</h2>
+        <p>Post-processing involves regression plots and error plots of Random Forest Regressor </p>
+        <div id="hist">
+            <img src="{{ url_for('static', filename='model_plots/Reg_and_dist_plot for rf_reg.jpg') }}" alt="MyOnlineMeal.com">
+        </div>
+        <div id="hist">
+            <img src="{{ url_for('static', filename='model_plots/Error_plot for rf_reg.jpg') }}" alt="MyOnlineMeal.com">
+        </div>
+    </div>
+</div>
+
+{% endblock %}

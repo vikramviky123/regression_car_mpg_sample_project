@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <!-- This is Welcome section ---------------------------------->
+    <section id="Intro">
+
+        <h1 class="h-primary"><span>Welcome to Miles per Gallon Regression Problem</span></h1>
+
+        <p>
+            The dataset for this excersize is car performance over mileage, 
+            Our task is to predict the target `mpg` of car listed in dataset.
+        </p>
+
+    </section>
+
+    <section id="Intro">
+
+        <h1><span>Context:</span></h1>
+        <p>
+             `Miles per Gallon(mpg)` is the most factor to determine how effcient the 
+            car in fuel consumption when compared to other cars. There are several factors 
+            affect the 'mpg' like road conditions, wind, temperature externally. 
+            But internally factors like engine displacement, weight, number of cylinders etc 
+            can also be very crusical in determing the `mpg`.
+        </p>
+
+
+    </section>
+
+    <section id="Intro">
+         
+        <p>The dataset contains mileage per gallon (MPG) data for various cars, along with information about several independent variables and the target variable. The following are the key details:</p>
+    
+        <h2 class="h-secondary"><span>Independent Variables:</span></h2>
+        
+        <ul class="data-list">
+            <li><strong>cyl</strong><strong>:</strong> Number of engine cylinders in the engine.</li>
+            <li><strong>disp</strong><strong>:</strong> Engine Displacement in cubic centimeters (cc).</li>
+            <li><strong>hp</strong><strong>:</strong> Horse Power.</li>
+            <li><strong>wt</strong><strong>:</strong> Weight in kilograms (kgs).</li>
+            <li><strong>acc</strong><strong>:</strong>Acceleration in meters per second squared (m/s²).</li>
+            <li><strong>yr</strong><strong>:</strong> Year the car was made (YYYY).</li>
+            <li><strong>origin</strong><strong>:</strong> Origin of the car.</li>
+            <li><strong>car_type</strong><strong>:</strong> Type of the car.</li>
+            <li><strong>car_name</strong><strong>:</strong> Name of the car.</li>
+        </ul>
+    
+        <h2 class="h-secondary"><span>Target Variable:</span></h2>
+        <p><strong>mpg:</strong> Fuel consumption per gallon in miles per gallon (mpg/kmpl).</p>
+    
+        <h2 class="h-secondary"><span>Metrics:</span></h2>
+        <p>You can evaluate the model using the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_absolute_error.html" target="_blank">METRICS</a> link.</p>
+    </section>
+    
+
+
+
+{% endblock %}
