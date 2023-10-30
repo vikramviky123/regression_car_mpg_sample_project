@@ -66,6 +66,7 @@ def predict():
         origin = float(request.form.get('origin'))
         car_type = float(request.form.get('car_type'))
         car_name = request.form.get('car_name')
+        scale = request.form.get('scale')
 
         # Create a dictionary from the form data
         data = {
@@ -93,20 +94,29 @@ def predict():
 
         process = 'label_encoders'
         print(process)
-        for col in preprocess_pickle[process].keys():
-            if df_transformed[col].dtype == 'object':
-                df_transformed[col] = preprocess_pickle[process][col].transform(
-                    df_transformed[col])
+        try:
+            for col in preprocess_pickle[process].keys():
+                if df_transformed[col].dtype == 'object':
+                    df_transformed[col] = preprocess_pickle[process][col].transform(
+                        df_transformed[col])
+        except Exception as e:
+            print('Exception raised:', e)
+        else:
+            print('no exceptions raised')
+
+        finally:
+            print("continuing after raising exception-------STRANGE")
 
         process = 'imputer'
         print(process)
         df_transformed = pd.DataFrame(preprocess_pickle[process].transform(
             df_transformed), columns=df_transformed.columns)
 
-        process = 'scaler'
-        print(process)
-        df_transformed = pd.DataFrame(preprocess_pickle[process].transform(
-            df_transformed), columns=df_transformed.columns)
+        if scale == 'yes':
+            process = 'scaler'
+            print(process)
+            df_transformed = pd.DataFrame(preprocess_pickle[process].transform(
+                df_transformed), columns=df_transformed.columns)
 
         print(df_transformed)
 
